@@ -1,5 +1,5 @@
 package modelo;
-//test
+//tes
 public class Persona {
     
 }
