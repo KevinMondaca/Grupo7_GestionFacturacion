@@ -15,8 +15,9 @@ public class AccesoDatos {
     
     public AccesoDatos(){
         try {
-            Class.forName("com.mysql.cj.jbdc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/Rent_A_Car", "root", "");
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/Sanatorio_Privado", "root", "");
+            comandos = conn.createStatement();
         } catch (ClassNotFoundException ex) {
             System.out.println("Error: No se encontro la BD");
         } catch (SQLException ex) {
