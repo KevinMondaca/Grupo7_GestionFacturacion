@@ -13,4 +13,13 @@ public class Paciente extends Persona {
     public void MostrarPersona() {
 
     }
+
+    public Obra_Social getObraSocial() {
+        return obraSocial;
+    }
+
+    public void setObraSocial(Obra_Social obraSocial) {
+        this.obraSocial = obraSocial;
+    }
+    
 }

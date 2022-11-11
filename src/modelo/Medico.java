@@ -12,4 +12,13 @@ public class Medico extends Persona {
     public void MostrarPersona() {
 
     }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+    
 }
