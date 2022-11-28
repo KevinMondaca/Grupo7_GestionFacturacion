@@ -8,6 +8,9 @@ import java.sql.Statement;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import modelo.Paciente;
+import modelo.Medico;
+import modelo.Obra_Social;
 
 public class AccesoDatos {
     private Connection conn;
@@ -23,5 +26,27 @@ public class AccesoDatos {
         } catch (SQLException ex) {
             System.out.println("Error: Usuario o pass incorrecto");
         }
+    }
+    
+    public Paciente darPaciente(int dni){
+        Paciente p1 = new Paciente();
+        String sql = "select * from Paciente where dni = " + dni;
+        try {
+            ResultSet registro = comandos.executeQuery(sql);
+            String n = registro.getString("nombres");
+            String a = registro.getString("apellidos");
+            String e = registro.getString("email");
+            int t = registro.getInt("telefono");
+            Obra_Social os = new Obra_Social(registro.getString("nombre_obraSocial"));
+            p1.setNombres(n);
+            p1.setApellidos(a);
+            p1.setEmail(e);
+            p1.setDni(dni);
+            p1.setTelefono(t);
+            p1.setObraSocial(os);
+        } catch(SQLException ex) {
+            System.out.println("Error: " + ex.toString());
+        }
+        return p1;
     }
 }

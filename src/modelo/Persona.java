@@ -8,6 +8,8 @@ public abstract class Persona {
     private int dni;
     private int telefono;
 
+    public Persona(){
+    }
     public Persona(String n, String a, int d, int t, String e) {
         this.nombres = n;
         this.apellidos = a;
