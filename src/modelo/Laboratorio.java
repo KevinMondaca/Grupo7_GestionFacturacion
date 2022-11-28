@@ -6,7 +6,9 @@ public class Laboratorio extends Estudio {
 
     private Tipo_Lab tipo;
     private int nroMuestra;
-
+    
+    public Laboratorio(){
+    }
     public Laboratorio(Paciente p, Medico m, LocalDate f, Tipo_Lab t, int nM) {
         super(p, m, f);
         this.tipo = t;

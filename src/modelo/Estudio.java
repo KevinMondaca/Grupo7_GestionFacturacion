@@ -9,7 +9,9 @@ public class Estudio {
     private Medico medico;
     private LocalDate fecha;
     private boolean facturado;
-
+    
+    public Estudio(){
+    }
     public Estudio(Paciente p, Medico m, LocalDate f) {
         this.paciente = p;
         this.medico = m;

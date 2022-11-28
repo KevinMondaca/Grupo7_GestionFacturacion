@@ -13,7 +13,13 @@ public class Paciente extends Persona {
     }
 
     public void MostrarPersona() {
-
+        System.out.println("    -|Paciente|-");
+        System.out.println("- DNI: " + this.getDni());
+        System.out.println("- Nombre completo: " + this.getNombres() + " " + this.getApellidos());
+        System.out.println("- Obra Social: " + this.obraSocial.getNombre());
+        System.out.println("- Contacto:");
+        System.out.println("    - telefono:" + this.getTelefono());
+        System.out.println("    - emial: " + this.getEmail());
     }
 
     public Obra_Social getObraSocial() {

@@ -12,7 +12,13 @@ public class Medico extends Persona {
     }
 
     public void MostrarPersona() {
-
+        System.out.println("    -|Medico|-");
+        System.out.println("- Matricula: " + this.getMatricula());
+        System.out.println("- DNI: " + this.getDni());
+        System.out.println("- Nombre completo: " + this.getNombres() + " " + this.getApellidos());
+        System.out.println("- Contacto:");
+        System.out.println("    - telefono:" + this.getTelefono());
+        System.out.println("    - emial: " + this.getEmail());
     }
 
     public int getMatricula() {

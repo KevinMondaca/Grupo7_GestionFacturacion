@@ -8,6 +8,8 @@ public class Imagen extends Estudio {
     private String zona;
     private boolean contraste;
 
+    public Imagen(){
+    }
     public Imagen(Paciente p, Medico m, LocalDate f, Img_Tec t, String z, boolean c) {
         super(p, m, f);
         this.tecnologia = t;
@@ -33,7 +35,6 @@ public class Imagen extends Estudio {
     @Override
     public double calcularCosto() {
         double c = 0;
-        
         return c;
     }
 
