@@ -4,13 +4,11 @@ import java.time.LocalDate;
 
 public class Laboratorio extends Estudio {
 
-    private String diagnostica;
-    private String tipo;
+    private Tipo_Lab tipo;
     private int nroMuestra;
 
-    public Laboratorio(Paciente p, Medico m, LocalDate f, String d, String t, int nM) {
+    public Laboratorio(Paciente p, Medico m, LocalDate f, Tipo_Lab t, int nM) {
         super(p, m, f);
-        this.diagnostica = d;
         this.tipo = t;
         this.nroMuestra = nM;
         setCodEstudio(generarCod());
@@ -19,7 +17,7 @@ public class Laboratorio extends Estudio {
     @Override
     public String generarCod() {
         String c = super.generarCod();
-        c = c + "LAB-" + this.diagnostica.substring(0, 4).toUpperCase() + "-M" + this.nroMuestra;
+        c = c + "LAB-" + this.tipo.getNombre().substring(0, 4).toUpperCase() + "-M" + this.nroMuestra;
         return c;
     }
     
@@ -28,35 +26,21 @@ public class Laboratorio extends Estudio {
         System.out.println("    -|Estudio-Laboratorio|-");
         System.out.println("- Cod-Est: " + this.getCodEstudio());
         super.mostrarEstudio();
-        System.out.println("- Diagnóstica: " + this.diagnostica);
-        System.out.println("- tipo: " + this.tipo);
-        System.out.println("- Muestra N°" + this.nroMuestra);
+        System.out.println("- Tipo: " + this.tipo.getNombre());
+        System.out.println("- Muestras N°" + this.nroMuestra);
     }
     
     @Override
     public double calcularCosto() {
         double c = 0;
-        if (this.diagnostica.equals("Glucosa")) {
-            c = c + 1;
-        } else if (this.diagnostica.equals("Sida")) {
-            c = c + 2;
-        }
         return c;
     }
 
-    public String getDiagnostico() {
-        return diagnostica;
-    }
-
-    public void setDiagnostico(String diagnostico) {
-        this.diagnostica = diagnostico;
-    }
-
-    public String getTipo() {
+    public Tipo_Lab getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(Tipo_Lab tipo) {
         this.tipo = tipo;
     }
 
