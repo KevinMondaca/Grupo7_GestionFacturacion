@@ -14,6 +14,15 @@ public class Obra_Social {
         this.listFacturas.add(f);
     }
     
+    public void mostrarObraSocial(){
+        System.out.println("- Nombre: " + this.nombre);
+        System.out.println("- Facturas: ");
+        for (Factura f: this.listFacturas) {
+            System.out.println("    - ID: " + f.getIdFactura() + " | $" + f.getTotal());
+        }
+        System.out.println("- TOTAL FACTURADO: $" + totalFacturado());
+    }
+    
     public double totalFacturado(){
         double t = 0;
         for (Factura x: this.listFacturas) {
